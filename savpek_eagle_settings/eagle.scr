@@ -1,0 +1,83 @@
+# Configuration Script
+#
+# This file can be used to configure the editor windows.
+
+MENU '[designlink22.png] Search and order {\
+                                          General : Run designlink-order.ulp -general; |\
+                                          Schematic : Run designlink-order.ulp; \
+                                          }'\
+     '[pcb-service.png] PCB Service : Run pcb-service.ulp;'
+
+BRD:
+ASSIGN CTRL+Q 'CHANGE LAYER DOCUMENT; CHANGE STYLE SHORTDASH; CHANGE WIDTH 0.1; WIRE';
+ASSIGN CTRL+R 'ROUTE';
+ASSIGN CTRL+X 'RIPUP';
+ASSIGN CTRL+M 'MOVE';
+ASSIGN CTRL+D 'CHANGE LAYER DOCUMENT; CHANGE SIZE 1.5MM; TEXT';
+ASSIGN CTRL+T 'CHANGE TEXT';
+ASSIGN CTRL+C 'COPY';
+ASSIGN CTRL+G 'GROUP';
+ASSIGN CTRL+V 'PASTE;';
+ASSIGN CTRL+S 'SPLIT';
+
+
+GRID MM 1.27 ON;
+GRID ALT MM 0.635;
+SET MITER_MENU 0;
+SET DRILL_MENU 0.2 0.3 0.4 0.5 0.6 0.8 1.0 2.0 3.0;
+#SET USED_LAYERS 1 16 17 18 19 20 21 22 23 24 25 26 27 28 39 40 41 42 44  45 47 48 49 51 52 100 101 102;
+SET USED_LAYERS ALL;
+SET POLY OFF;
+SET WIRE_BEND @ 0 1
+
+#Menu Add Change Copy Delete Display Grid Group Move Name Quit Rect \
+#     Route Script Show Signal Split Text Value Via Window ';'  Wire Write Edit;
+
+SCH:
+
+Grid Default;
+Change Width 0.006;
+ASSIGN CTRL+Q 'CHANGE LAYER DOCUMENT; CHANGE STYLE SHORTDASH; CHANGE WIDTH 0.006; WIRE';
+ASSIGN CTRL+N 'CHANGE STYLE CONTINUOUS; Net';
+ASSIGN CTRL+M 'MOVE';
+ASSIGN CTRL+W 'CHANGE SIZE 0.05; CHANGE LAYER DOCUMENTARY; TEXT';
+ASSIGN CTRL+T 'CHANGE TEXT';
+ASSIGN CTRL+C 'COPY';
+ASSIGN CTRL+X 'DELETE';
+ASSIGN CTRL+G 'GROUP';
+ASSIGN CTRL+B 'BUS';
+ASSIGN CTRL+A 'NAME';
+ASSIGN CTRL+V 'PASTE;';
+ASSIGN CTRL+S 'VALUE';
+ASSIGN CTRL+L 'CHANGE SIZE 1.778MM; LABEL';
+SET WIRE_BEND @ 0
+
+#Menu Add Bus Change Copy Delete Display Gateswap Grid Group Invoke Junction \
+#     Label Move Name Net Pinswap Quit Script Show Split Value Window ';' \
+#     Wire Write Edit;
+
+LBR:
+
+#Menu Close Export Open Script Write ';' Edit;
+
+DEV:
+
+Grid Default;
+#Menu Add Change Copy Connect Delete Display Export Grid Move Name Package \
+#     Prefix Quit Script Show Value Window ';' Write Edit;
+
+SYM:
+
+Grid Default On;
+Change Width 0.010;
+#Menu Arc Change Copy Cut Delete Display Export Grid Group Move Name Paste \
+#     Pin Quit Script Show Split Text Value Window ';' Wire Write Edit;
+
+PAC:
+
+Grid MM 1.27 ON;
+GRID ALT MM 0.635;
+Change Width 0.005;
+Change Size 0.050;
+#Menu Add Change Copy Delete Display Grid Group Move Name Pad Quit \
+#     Script Show Smd Split Text Window ';' Wire Write Edit;
